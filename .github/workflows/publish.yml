@@ -1,6 +1,7 @@
 name: Publish to npm
 
-# Publishes when the version in package.json is not on npm yet.
+# Stages the version from package.json if it is not on npm yet.
+# A maintainer then approves it with 2FA: `npm stage approve` or the Staged Packages tab on npmjs.com.
 on:
   push:
     branches: [master]
@@ -31,6 +32,9 @@ jobs:
           else
             echo "publish=true" >> "$GITHUB_OUTPUT"
           fi
-      - name: Publish
+      - name: Stage for approval
         if: steps.check.outputs.publish == 'true'
-        run: npm publish
+        run: |
+          npm install -g npm@^11.15.0
+          npm --version
+          npm stage publish
