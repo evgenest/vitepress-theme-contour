@@ -1,0 +1,40 @@
+{
+  "name": "@evgenest/vitepress-theme-contour",
+  "version": "1.0.1",
+  "description": "A VitePress 2 theme with a calmer layout, framed code blocks, a global line-wrap toggle and an auto/light/dark switch.",
+  "keywords": [
+    "vitepress",
+    "vitepress-theme",
+    "documentation",
+    "theme"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evgenest/vitepress-theme-contour.git"
+  },
+  "homepage": "https://github.com/evgenest/vitepress-theme-contour#readme",
+  "bugs": {
+    "url": "https://github.com/evgenest/vitepress-theme-contour/issues"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./theme/index.d.ts",
+      "default": "./theme/index.ts"
+    },
+    "./config": {
+      "types": "./config.d.ts",
+      "default": "./config.js"
+    }
+  },
+  "files": [
+    "theme",
+    "config.js",
+    "config.d.ts"
+  ],
+  "peerDependencies": {
+    "vitepress": "^2.0.0-alpha.21",
+    "vue": "^3.5.0"
+  }
+}
